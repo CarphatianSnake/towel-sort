@@ -4,15 +4,13 @@ module.exports = function towelSort (matrix) {
 
   let res = [];
 
+  const resPush = arr => arr.forEach(value => res.push(value));
+
   matrix.forEach((item, i) => {
     if (i % 2 === 0) {
-      item.forEach (value => {
-        res.push(value);
-      })
+      resPush(item);
     } else {
-      item.reverse().forEach (value => {
-        res.push(value);
-      })
+      resPush(item.reverse());
     }
   });
 
